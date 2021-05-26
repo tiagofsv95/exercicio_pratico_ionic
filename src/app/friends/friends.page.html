@@ -1,0 +1,17 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Amigos</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<div *ngFor="let friend of friends">
+  <div class="friends_list">
+    <p>{{friend.name}}</p>
+    <p> Idade: {{friend.age}}</p>
+    <p>{{friend.friendshipLevel}}</p>
+    <ion-icon (click)="apresentarActionSheet(friend.id)" name="trash"></ion-icon>
+  </div>
+</div>

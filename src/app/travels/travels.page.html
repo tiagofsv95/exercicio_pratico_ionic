@@ -1,0 +1,23 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Viagem</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [scrollEvents]="true">
+  <ion-virtual-scroll class="travel_container" [items]="travels">
+    <ion-card class="travels_list" *virtualItem="let item; let itemBounds = bounds;">
+      <div>
+        <ion-img [src]="item.image" [alt]="item.name"></ion-img>
+      </div>
+    <ion-card-header>
+      <ion-card-title>{{ item.local }}</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>{{ item.description }}</ion-card-content>
+    <ion-card-content>{{ item.date }}</ion-card-content>
+    </ion-card>
+  </ion-virtual-scroll>
+</ion-content>
